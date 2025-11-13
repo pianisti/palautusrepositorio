@@ -5,6 +5,8 @@ from logger import logger
 from summa import summa
 from erotus import erotus
 
+# lisätään tähän kommentti tehtävässä 13 myös
+
 logger("aloitetaan ohjelma") # muutos mainissa
 
 x = int(input("luku 1: "))
