@@ -18,7 +18,7 @@ class Kayttoliittyma:
             Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
             Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
             Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote),
-            #Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote)
+            Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote)
         }
 
     def kaynnista(self):
@@ -63,7 +63,7 @@ class Kayttoliittyma:
 
     def _lue_syote(self):
         return self._syote_kentta.get()
-    
+
     def _suorita_komento(self, komento):
         komento_olio = self._komennot[komento]
         komento_olio.suorita()
@@ -85,7 +85,7 @@ class Summa:
 
     def suorita(self):
         return self.logiikka.plus(int(self.syote()))
-    
+
 class Erotus:
     def __init__(self, logiikka, syote):
         self.logiikka = logiikka
@@ -93,7 +93,7 @@ class Erotus:
 
     def suorita(self):
         return self.logiikka.miinus(int(self.syote()))
-    
+
 class Nollaus:
     def __init__(self, logiikka, syote):
         self.logiikka = logiikka
@@ -101,3 +101,11 @@ class Nollaus:
 
     def suorita(self):
         return self.logiikka.nollaa()
+
+class Kumoa:
+    def __init__(self, logiikka, syote):
+        self.logiikka = logiikka
+        self.syote = syote
+
+    def suorita(self):
+        return self.logiikka.kumoa()
